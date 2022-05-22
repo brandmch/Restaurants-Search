@@ -6,12 +6,12 @@ import Search from "./src/components/Search";
 import CategoryItem from "./src/components/CategoryItem";
 
 export default function App() {
-  const [selectedItem, setSelectedItem] = useState(1);
+  const [selectedItem, setSelectedItem] = useState(0);
   return (
     <View style={styles.container}>
       <StatusBar />
       <Header />
-      <Search />
+      <Search selectedItem={selectedItem} setSelectedItem={setSelectedItem} />
       <CategoryItem
         selectedItem={selectedItem}
         setSelectedItem={setSelectedItem}

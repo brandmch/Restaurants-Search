@@ -1,7 +1,7 @@
 import react from "react";
 import pics from "./images/images";
 
-const Food = [
+const food = [
   { id: 1, name: "Hamborga", img: pics.burger },
   { id: 2, name: "Cake", img: pics.cake },
   { id: 3, name: "Pasta", img: pics.pasta },
@@ -10,4 +10,4 @@ const Food = [
   { id: 6, name: "Steak", img: pics.steak },
 ];
 
-export default Food;
+export default food;
