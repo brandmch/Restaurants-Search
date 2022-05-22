@@ -5,15 +5,12 @@ import {
   ScrollView,
   TouchableWithoutFeedback,
 } from "react-native";
-import { useState } from "react";
 import { commonStyles } from "../common/styles";
 import Food from "../food_data";
 
 const { container, elevation, imageContainer, pic } = commonStyles;
 
-export default function CategoryItem() {
-  const [selectedItem, setSelectedItem] = useState(1);
-
+export default function CategoryItem({ selectedItem, setSelectedItem }) {
   const foodCategories = Food.map((food) => {
     return (
       <TouchableWithoutFeedback onPress={() => setSelectedItem(food.id)}>
