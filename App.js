@@ -7,7 +7,6 @@ import CategoryItem from "./src/components/CategoryItem";
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Hi</Text>
       <StatusBar />
       <Header />
       <Search />

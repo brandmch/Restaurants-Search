@@ -6,6 +6,7 @@ export const commonStyles = {
     shadowOpacity: 1,
     borderRadius: 20,
   },
+
   backgroundColor: {
     backgroundColor: "#ff007b",
   },
@@ -19,15 +20,13 @@ export const commonStyles = {
     backgroundColor: "#ffffff",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#83cf00",
   },
+
   pic: {
     height: 35,
     width: 35,
   },
-  foodItems: {
-    flexDirection: "row",
-  },
+
   imageContainer: {
     width: 50,
     height: 50,

@@ -1,26 +1,47 @@
-import { Text, View, StyleSheet, Image, ScrollView } from "react-native";
-import pics from "../images/images";
+import {
+  Text,
+  View,
+  Image,
+  ScrollView,
+  TouchableWithoutFeedback,
+} from "react-native";
+import { useState } from "react";
 import { commonStyles } from "../common/styles";
-import { v1 as uuidv1 } from "uuid";
 import Food from "../food_data";
 
-const { container, elevation, foodItems, imageContainer } = commonStyles;
-
-const foodCategories = Food.map((food) => {
-  return (
-    <View style={[container, elevation]}>
-      <View style={imageContainer}>
-        <Image source={food.img} style={{ height: 35, width: 35 }} />
-      </View>
-      <Text>{food.name}</Text>
-    </View>
-  );
-});
+const { container, elevation, imageContainer, pic } = commonStyles;
 
 export default function CategoryItem() {
+  const [selectedItem, setSelectedItem] = useState(1);
+
+  const foodCategories = Food.map((food) => {
+    return (
+      <TouchableWithoutFeedback onPress={() => setSelectedItem(food.id)}>
+        <View
+          style={[
+            container,
+            elevation,
+            {
+              backgroundColor: selectedItem !== food.id ? "#ffffff" : "#b6ff38",
+            },
+          ]}
+          onPress={() => {
+            console.log("PRESSED MOGO");
+          }}
+          key={food.id}
+        >
+          <View style={imageContainer}>
+            <Image source={food.img} style={pic} />
+          </View>
+          <Text style={{ fontWeight: "bold" }}>{food.name}</Text>
+        </View>
+      </TouchableWithoutFeedback>
+    );
+  });
+
   return (
     <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-      <View style={foodItems}>{foodCategories}</View>
+      <View style={{ flexDirection: "row" }}>{foodCategories}</View>
     </ScrollView>
   );
 }
